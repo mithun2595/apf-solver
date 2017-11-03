@@ -2,6 +2,7 @@ BANG    =       $(shell expr match `hostname` ccom-bang)
 BANG-COMPUTE   =  $(shell expr match `hostname` compute)
 BANG-BANG = $(shell echo $(BANG)\&$(BANG-COMPUTE))
 STAMPEDE = $(shell hostname | grep stampede | wc -c)
+COMET = $(shell hostname | grep comet | wc -c)
 
 # If you want to compile with MPI enabled,
 # uncomment this line
@@ -27,6 +28,11 @@ ifneq ($(STAMPEDE), 0)
 else
 endif
 
+ifneq ($(COMET), 0)
+ include $(PUB)/Arch/arch.intel.c++11.generic
+ REPORT =  -qopt-report=1
+else
+endif
 
 # set vec=1 if you want to vectorize by hand
 ifeq ($(vec),1)
