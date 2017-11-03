@@ -13,6 +13,77 @@ using namespace std;
 
 void printMat(const char mesg[], double *E, int m, int n);
 
+
+void localInit(double *E, double *E_prev, double *R, int m, int n,
+	       int yNum, int xNum, int dim_y, int dim_x){
+  // yNum start point of this subgrid
+  // xNum start point of this subgrid
+  // dim_y - dimensions of subgrid in y (row) direction (prepad) 
+  // dim_x - dimensions of subgrid in x (col) direction (prepad)
+  int absMidPt = (n+1)/2;
+  int local_lo = xNum;
+  int local_hi = local_lo + dim_x;
+  int i;
+
+  //  printf("localInit absMidPt = %d, local_lo = %d\n", absMidPt, local_lo);
+  if (absMidPt > local_hi){
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      E_prev[i] = 0.0;
+    }
+    
+  }else if (absMidPt <= local_lo){
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      E_prev[i] = 1.0;
+    }
+
+  }else{
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      E_prev[i] = R[i] = 0.0;
+    }
+    int local_mid = absMidPt - local_lo;
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      int colIndex = i % (dim_x+2);
+      if (colIndex == 0 || colIndex == (dim_x+1) || colIndex < (local_mid+1)){
+	continue;
+      }
+      E_prev[i] = 1.0;
+    }
+  }
+
+
+  absMidPt = (m+1)/2;
+  local_lo= yNum;
+  local_hi = local_lo + dim_y;
+  if (absMidPt > local_hi){
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      R[i] = 0.0;
+    }
+  }else if (absMidPt <= local_lo){
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      R[i] = 1.0;
+    }
+  }else{
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      R[i] = 0.0;
+    }
+    int local_mid = absMidPt - local_lo;
+    for (i=0; i<(dim_x+2)*(dim_y+2); i++){
+      int rowIndex = i / (dim_x+2);
+      int colIndex = i % (dim_x+2);
+      if ((colIndex == 0) || (colIndex == (dim_x+1)) || (rowIndex < (local_mid+1))){
+	continue;
+      }
+      R[i] = 1.0;
+    }
+  }
+
+  // We only print the meshes if they are small enough
+  //  printMat("E_prev",E_prev,dim_y,dim_x);
+  //  printMat("R",R,dim_y,dim_x);
+
+
+}
+
 //
 // Initialization
 //
@@ -48,8 +119,10 @@ void init (double *E,double *E_prev,double *R,int m,int n){
         R[i] = 1.0;
     }
     // We only print the meshes if they are small enough
+#if 0
     printMat("E_prev",E_prev,m,n);
     printMat("R",R,m,n);
+#endif
 }
 
 double *alloc1D(int m,int n){
@@ -62,16 +135,21 @@ double *alloc1D(int m,int n){
 
 void printMat(const char mesg[], double *E, int m, int n){
     int i;
+#if 0
     if (m>8)
       return;
+#else
+    if (m>34)
+      return;
+#endif
     printf("%s\n",mesg);
     for (i=0; i < (m+2)*(n+2); i++){
        int rowIndex = i / (n+2);
        int colIndex = i % (n+2);
-       if ((colIndex>0) && (colIndex<m+1))
-          if ((rowIndex > 0) && (rowIndex < n+1))
+       if ((colIndex>0) && (colIndex<n+1))
+          if ((rowIndex > 0) && (rowIndex < m+1))
             printf("%6.3f ", E[i]);
-       if (colIndex == m+1)
+       if (colIndex == n+1)
 	    printf("\n");
     }
 }
