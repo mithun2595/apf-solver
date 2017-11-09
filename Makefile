@@ -30,7 +30,8 @@ endif
 
 ifneq ($(COMET), 0)
  include $(PUB)/Arch/arch.intel.c++11.generic
- REPORT =  -qopt-report=1
+#  REPORT =  -qopt-report=1
+ REPORT = -vec-report=1
 else
 endif
 
