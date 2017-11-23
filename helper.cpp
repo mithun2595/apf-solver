@@ -18,6 +18,7 @@ using namespace std;
 extern control_block cb;
 int my_rank = 0;
 int pidx, pidy;
+int x_extra, y_extra;
 int local_n, local_m;
 
 void printMat(const char mesg[], double *E, int m, int n);
@@ -104,6 +105,11 @@ void localInit(double *E, double *E_prev, double *R, int m, int n,
 void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
     printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
+
+    /*
+    int i;
+    printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
+    
     for (i=0; i < (m+2)*(n+2); i++)
         E_prev[i] = R[i] = 0;
 
@@ -127,6 +133,36 @@ void init (double *E,double *E_prev,double *R,int m,int n){
 
         R[i] = 1.0;
     }
+    */
+
+    for (i=0; i < (local_m+2)*(local_n+2); i++)
+        E_prev[i] = R[i] = 0;
+
+    // extensions.
+    int rx = n % cb.px;
+    int ry = m % cb.py;
+
+    printf("Rx and Ry = %d and %d\n\n",rx,ry);
+
+    if(my_rank > cb.px/2) {
+      for(i=0; i < (local_m+2)*(local_n+2); i++)
+        E_prev[i] = 1;
+    }
+    if(my_rank%cb.px == cb.px/2) {
+      int prefilled = 0;
+      if(my_rank%cb.px < rx) {
+        prefilled = my_rank * local_n;
+      }
+      if(my_rank%cb.px > rx) {
+        prefilled = (rx * (local_n+1)) + ((my_rank - rx) * local_n);
+      }
+      if(my_rank%cb.px == rx) {
+        prefilled = rx * (local_n + 1);
+      }
+      printf("PREFILLED = %d\n\n", prefilled);
+      // cells to fill localm - (n - prefilled)
+      printf("CELLS TO FILL IN CURRENT = %d\n\n", local_n - ((n+1)/2) + prefilled);
+    }
     // We only print the meshes if they are small enough
 #if 0
     printMat("E_prev",E_prev,m,n);
@@ -146,9 +182,11 @@ double *alloc1D(int paddedM,int paddedN){
     int n = paddedN - 2;
 
     // no of cells in y direction
-    local_m = m / cb.py + (pidx < (m % cb.py));
+    y_extra = pidx < (m % cb.py);
+    local_m = m / cb.py + y_extra;
     // no of cells in x direction
-    local_n = n / cb.px + (pidy < (n % cb.px)); 
+    x_extra = pidy < (n % cb.px);
+    local_n = n / cb.px + x_extra; 
     
     double *E;
     // Ensures that allocatdd memory is aligned on a 16 byte boundary
