@@ -6,11 +6,17 @@
 
 #include <iostream>
 #include <assert.h>
+#include "cblock.h"
 // Needed for memalign
+#ifdef _MPI_
+ #include <mpi.h>
+#endif
 #include <malloc.h>
 
 using namespace std;
-
+extern control_block cb;
+int my_rank = 0;
+int pidx, pidy;
 void printMat(const char mesg[], double *E, int m, int n);
 
 
@@ -94,7 +100,7 @@ void localInit(double *E, double *E_prev, double *R, int m, int n,
 //
 void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
-
+    printf("PIDX %d PIDY %d \n",pidx, pidy);
     for (i=0; i < (m+2)*(n+2); i++)
         E_prev[i] = R[i] = 0;
 
@@ -125,8 +131,19 @@ void init (double *E,double *E_prev,double *R,int m,int n){
 #endif
 }
 
-double *alloc1D(int m,int n){
-    int nx=n, ny=m;
+double *alloc1D(int paddedM,int paddedN){
+    #ifdef _MPI_
+    MPI_Comm_rank(MPI_COMM_WORLD,&my_rank);
+    #endif
+    
+    pidx = my_rank / cb.px;
+    pidy = my_rank % cb.px;
+
+    int m = paddedM - 2;
+    int n = paddedN - 2;
+    
+    int nx=n/cb.px; int ny=m/cb.py; //Need to include for corner cases.
+    
     double *E;
     // Ensures that allocatdd memory is aligned on a 16 byte boundary
     assert(E= (double*) memalign(16, sizeof(double)*nx*ny) );
