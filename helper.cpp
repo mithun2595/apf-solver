@@ -14,9 +14,12 @@
 #include <malloc.h>
 
 using namespace std;
+
 extern control_block cb;
 int my_rank = 0;
 int pidx, pidy;
+int local_n, local_m;
+
 void printMat(const char mesg[], double *E, int m, int n);
 
 
@@ -100,7 +103,7 @@ void localInit(double *E, double *E_prev, double *R, int m, int n,
 //
 void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
-    printf("PIDX %d PIDY %d \n",pidx, pidy);
+    printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
     for (i=0; i < (m+2)*(n+2); i++)
         E_prev[i] = R[i] = 0;
 
@@ -141,12 +144,16 @@ double *alloc1D(int paddedM,int paddedN){
 
     int m = paddedM - 2;
     int n = paddedN - 2;
-    
-    int nx=n/cb.px; int ny=m/cb.py; //Need to include for corner cases.
+
+    // no of cells in y direction
+    local_m = m / cb.py + (pidx < (m % cb.py));
+    // no of cells in x direction
+    local_n = n / cb.px + (pidy < (n % cb.px)); 
     
     double *E;
     // Ensures that allocatdd memory is aligned on a 16 byte boundary
-    assert(E= (double*) memalign(16, sizeof(double)*nx*ny) );
+    // plus 2 is the padding to accomodate ghost cells.
+    assert(E= (double*) memalign(16, sizeof(double)*(local_m+2)*(local_n+2)));
     return(E);
 }
 
