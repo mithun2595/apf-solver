@@ -126,6 +126,7 @@ void init (double *E,double *E_prev,double *R,int m,int n){
 
     // first col of the E_prev matrix w/o ghost cells in the global problem
     int initial_j = pIdy*little_n + min(pIdy, extra_x);
+    // distance of initial_j from the first cols of 1s
     int rem_cols = min((cb.n + 1)/2 - initial_j, local_n);
 
     for (i = 0; i < (local_m + 2)*(local_n + 2); i++) {
@@ -177,12 +178,13 @@ void printMat(const char mesg[], double *E, int m, int n)
 
   for (int i = 0; i < (m + 2)*(n + 2); ++i)
   {
-    int rowIndex = i / (n + 2);
-    int colIndex = i % (n + 2);
+    int rIdx = i / (n + 2);
+    int cIdx = i % (n + 2);
 
-    if ((colIndex == 0 || colIndex == n + 1) && (rowIndex == 0 || rowIndex == m+1)) printf("      ");
-    else printf("%1.3f ", E[i]); // For testing purposes, we also print the ghost cells
+    // printing along with ghost cells. used for testing.
+    if ((cIdx == 0 || cIdx == n + 1) && (rIdx == 0 || rIdx == m+1)) printf("      ");
+    else printf("%1.3f ", E[i]); 
     
-    if (colIndex == n+1)printf("\n");
+    if (cIdx == n+1)printf("\n");
   }
 }
