@@ -7,18 +7,17 @@
 #include <iostream>
 #include <assert.h>
 #include "cblock.h"
-// Needed for memalign
+#include "lblock.h"
 #ifdef _MPI_
- #include <mpi.h>
+#include <mpi.h>
 #endif
 #include <malloc.h>
 
 using namespace std;
 
 extern control_block cb;
-int my_rank = 0;
-int pIdx, pIdy;
-int local_n, local_m;
+// local block maintains variables for the current process
+local_block lb;
 
 void printMat(const char mesg[], double *E, int m, int n);
 
@@ -103,7 +102,7 @@ void localInit(double *E, double *E_prev, double *R, int m, int n,
 //
 void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
-    printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
+    printf("My Rank is %d, My local size is %d and %d\n\n\n", lb.rank, lb.m, lb.n);
 
     int extra_x = n % cb.px;
     int extra_y = m % cb.py;
@@ -111,60 +110,60 @@ void init (double *E,double *E_prev,double *R,int m,int n){
     int little_n = n / cb.px;
 
     // first row of the R matrix w/o ghost cells in the global problem
-    int initial_i = pIdx*little_m + min(pIdx, extra_y);
+    int initial_i = lb.pIdx*little_m + min(lb.pIdx, extra_y);
     // distance of initial_i from the first rows of 1s
-    int rem_rows = min((cb.m + 1)/2 - initial_i, local_m); 
+    int rem_rows = min((cb.m + 1)/2 - initial_i, lb.m); 
 
-    for (i = 0; i < (local_m + 2)*(local_n + 2); i++) {
+    for (i = 0; i < (lb.m + 2)*(lb.n + 2); i++) {
 
-      int rIdx = i / (local_n + 2);
-      int cIdx = i % (local_n + 2);
+      int rIdx = i / (lb.n + 2);
+      int cIdx = i % (lb.n + 2);
 
-      if (rIdx == 0 || rIdx == local_m + 1 || rIdx <= rem_rows || cIdx == 0 || cIdx == local_n + 1) R[i] = 0.0;
+      if (rIdx == 0 || rIdx == lb.m + 1 || rIdx <= rem_rows || cIdx == 0 || cIdx == lb.n + 1) R[i] = 0.0;
       else R[i] = 1.0;
     }
 
     // first col of the E_prev matrix w/o ghost cells in the global problem
-    int initial_j = pIdy*little_n + min(pIdy, extra_x);
+    int initial_j = lb.pIdy*little_n + min(lb.pIdy, extra_x);
     // distance of initial_j from the first cols of 1s
-    int rem_cols = min((cb.n + 1)/2 - initial_j, local_n);
+    int rem_cols = min((cb.n + 1)/2 - initial_j, lb.n);
 
-    for (i = 0; i < (local_m + 2)*(local_n + 2); i++) {
+    for (i = 0; i < (lb.m + 2)*(lb.n + 2); i++) {
 
-      int rIdx = i / (local_n + 2);
-      int cIdx = i % (local_n + 2);
+      int rIdx = i / (lb.n + 2);
+      int cIdx = i % (lb.n + 2);
 
-      if (cIdx == 0 || cIdx == local_n + 1 || cIdx <= rem_cols || rIdx == 0 || rIdx == local_m + 1) E_prev[i] = 0.0;
+      if (cIdx == 0 || cIdx == lb.n + 1 || cIdx <= rem_cols || rIdx == 0 || rIdx == lb.m + 1) E_prev[i] = 0.0;
       else E_prev[i] = 1.0;
     }
 
     // We only print the meshes if they are small enough
 #if 1
-    printMat("E_prev",E_prev,local_m,local_n);
-    printMat("R",R,local_m,local_n);
+    printMat("E_prev",E_prev,lb.m,lb.n);
+    printMat("R",R,lb.m,lb.n);
 #endif
 }
 
 double *alloc1D(int paddedM,int paddedN){
-    #ifdef _MPI_
-    MPI_Comm_rank(MPI_COMM_WORLD,&my_rank);
-    #endif
+#ifdef _MPI_
+    MPI_Comm_rank(MPI_COMM_WORLD,&lb.rank);
+#endif
     
-    pIdx = my_rank / cb.px;
-    pIdy = my_rank % cb.px;
+    lb.pIdx = lb.rank / cb.px;
+    lb.pIdy = lb.rank % cb.px;
 
     int m = paddedM - 2;
     int n = paddedN - 2;
 
     // no of cells in y direction
-    local_m = m / cb.py + (pIdx < (m % cb.py));
+    lb.m = m / cb.py + (lb.pIdx < (m % cb.py));
     // no of cells in x direction
-    local_n = n / cb.px + (pIdy < (n % cb.px)); 
+    lb.n = n / cb.px + (lb.pIdy < (n % cb.px)); 
     
     double *E;
-    // Ensures that allocatdd memory is aligned on a 16 byte boundary
+    // Ensures that allocated memory is aligned on a 16 byte boundary
     // plus 2 is the padding to accomodate ghost cells.
-    assert(E= (double*) memalign(16, sizeof(double)*(local_m+2)*(local_n+2)));
+    assert(E= (double*) memalign(16, sizeof(double)*(lb.m+2)*(lb.n+2)));
     return(E);
 }
 
