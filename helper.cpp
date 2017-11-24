@@ -17,8 +17,7 @@ using namespace std;
 
 extern control_block cb;
 int my_rank = 0;
-int pidx, pidy;
-int x_extra, y_extra;
+int pIdx, pIdy;
 int local_n, local_m;
 
 void printMat(const char mesg[], double *E, int m, int n);
@@ -106,67 +105,42 @@ void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
     printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
 
-    /*
-    int i;
-    printf("My Rank is %d, My local size is %d and %d\n\n\n", my_rank, local_m, local_n);
-    
-    for (i=0; i < (m+2)*(n+2); i++)
-        E_prev[i] = R[i] = 0;
+    int extra_x = n % cb.px;
+    int extra_y = m % cb.py;
+    int little_m = m / cb.py;
+    int little_n = n / cb.px;
 
-    for (i = (n+2); i < (m+1)*(n+2); i++) {
-	int colIndex = i % (n+2);		// gives the base index (first row's) of the current index
+    // first row of the R matrix w/o ghost cells in the global problem
+    int initial_i = pIdx*little_m + min(pIdx, extra_y);
+    // distance of initial_i from the first rows of 1s
+    int rem_rows = min((cb.m + 1)/2 - initial_i, local_m); 
 
-        // Need to compute (n+1)/2 rather than n/2 to work with odd numbers
-	if(colIndex == 0 || colIndex == (n+1) || colIndex < ((n+1)/2+1))
-	    continue;
+    for (i = 0; i < (local_m + 2)*(local_n + 2); i++) {
 
-        E_prev[i] = 1.0;
+      int rIdx = i / (local_n + 2);
+      int cIdx = i % (local_n + 2);
+
+      if (rIdx == 0 || rIdx == local_m + 1 || rIdx <= rem_rows || cIdx == 0 || cIdx == local_n + 1) R[i] = 0.0;
+      else R[i] = 1.0;
     }
 
-    for (i = 0; i < (m+2)*(n+2); i++) {
-	int rowIndex = i / (n+2);		// gives the current row number in 2D array representation
-	int colIndex = i % (n+2);		// gives the base index (first row's) of the current index
+    // first col of the E_prev matrix w/o ghost cells in the global problem
+    int initial_j = pIdy*little_n + min(pIdy, extra_x);
+    int rem_cols = min((cb.n + 1)/2 - initial_j, local_n);
 
-        // Need to compute (m+1)/2 rather than m/2 to work with odd numbers
-	if(colIndex == 0 || colIndex == (n+1) || rowIndex < ((m+1)/2+1))
-	    continue;
+    for (i = 0; i < (local_m + 2)*(local_n + 2); i++) {
 
-        R[i] = 1.0;
+      int rIdx = i / (local_n + 2);
+      int cIdx = i % (local_n + 2);
+
+      if (cIdx == 0 || cIdx == local_n + 1 || cIdx <= rem_cols || rIdx == 0 || rIdx == local_m + 1) E_prev[i] = 0.0;
+      else E_prev[i] = 1.0;
     }
-    */
 
-    for (i=0; i < (local_m+2)*(local_n+2); i++)
-        E_prev[i] = R[i] = 0;
-
-    // extensions.
-    int rx = n % cb.px;
-    int ry = m % cb.py;
-
-    printf("Rx and Ry = %d and %d\n\n",rx,ry);
-
-    if(my_rank > cb.px/2) {
-      for(i=0; i < (local_m+2)*(local_n+2); i++)
-        E_prev[i] = 1;
-    }
-    if(my_rank%cb.px == cb.px/2) {
-      int prefilled = 0;
-      if(my_rank%cb.px < rx) {
-        prefilled = my_rank * local_n;
-      }
-      if(my_rank%cb.px > rx) {
-        prefilled = (rx * (local_n+1)) + ((my_rank - rx) * local_n);
-      }
-      if(my_rank%cb.px == rx) {
-        prefilled = rx * (local_n + 1);
-      }
-      printf("PREFILLED = %d\n\n", prefilled);
-      // cells to fill localm - (n - prefilled)
-      printf("CELLS TO FILL IN CURRENT = %d\n\n", local_n - ((n+1)/2) + prefilled);
-    }
     // We only print the meshes if they are small enough
-#if 0
-    printMat("E_prev",E_prev,m,n);
-    printMat("R",R,m,n);
+#if 1
+    printMat("E_prev",E_prev,local_m,local_n);
+    printMat("R",R,local_m,local_n);
 #endif
 }
 
@@ -175,18 +149,16 @@ double *alloc1D(int paddedM,int paddedN){
     MPI_Comm_rank(MPI_COMM_WORLD,&my_rank);
     #endif
     
-    pidx = my_rank / cb.px;
-    pidy = my_rank % cb.px;
+    pIdx = my_rank / cb.px;
+    pIdy = my_rank % cb.px;
 
     int m = paddedM - 2;
     int n = paddedN - 2;
 
     // no of cells in y direction
-    y_extra = pidx < (m % cb.py);
-    local_m = m / cb.py + y_extra;
+    local_m = m / cb.py + (pIdx < (m % cb.py));
     // no of cells in x direction
-    x_extra = pidy < (n % cb.px);
-    local_n = n / cb.px + x_extra; 
+    local_n = n / cb.px + (pIdy < (n % cb.px)); 
     
     double *E;
     // Ensures that allocatdd memory is aligned on a 16 byte boundary
@@ -195,23 +167,22 @@ double *alloc1D(int paddedM,int paddedN){
     return(E);
 }
 
-void printMat(const char mesg[], double *E, int m, int n){
-    int i;
-#if 0
-    if (m>8)
-      return;
-#else
-    if (m>34)
-      return;
-#endif
-    printf("%s\n",mesg);
-    for (i=0; i < (m+2)*(n+2); i++){
-       int rowIndex = i / (n+2);
-       int colIndex = i % (n+2);
-       if ((colIndex>0) && (colIndex<n+1))
-          if ((rowIndex > 0) && (rowIndex < m+1))
-            printf("%6.3f ", E[i]);
-       if (colIndex == n+1)
-	    printf("\n");
-    }
+void printMat(const char mesg[], double *E, int m, int n)
+{
+  if (m > 8)
+  {
+    return;
+  }
+  printf("%s\n", mesg);
+
+  for (int i = 0; i < (m + 2)*(n + 2); ++i)
+  {
+    int rowIndex = i / (n + 2);
+    int colIndex = i % (n + 2);
+
+    if ((colIndex == 0 || colIndex == n + 1) && (rowIndex == 0 || rowIndex == m+1)) printf("      ");
+    else printf("%1.3f ", E[i]); // For testing purposes, we also print the ghost cells
+    
+    if (colIndex == n+1)printf("\n");
+  }
 }
