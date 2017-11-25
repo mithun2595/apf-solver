@@ -138,7 +138,7 @@ void init (double *E,double *E_prev,double *R,int m,int n){
     }
 
     // We only print the meshes if they are small enough
-#if 1
+#if 0
     printMat("E_prev",E_prev,lb.m,lb.n);
     printMat("R",R,lb.m,lb.n);
 #endif
@@ -159,6 +159,11 @@ double *alloc1D(int paddedM,int paddedN){
     lb.m = m / cb.py + (lb.pIdx < (m % cb.py));
     // no of cells in x direction
     lb.n = n / cb.px + (lb.pIdy < (n % cb.px)); 
+
+    lb.recv_W = new double[4*lb.m];
+    lb.recv_E = lb.recv_W + lb.m;
+    lb.send_W = lb.recv_E + lb.m;
+    lb.send_E = lb.send_W + lb.m;
     
     double *E;
     // Ensures that allocated memory is aligned on a 16 byte boundary
