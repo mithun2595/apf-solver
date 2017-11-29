@@ -127,7 +127,9 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
       //   if (cb.plot_freq) plotter->updatePlot(E,  -1, m+1, n+1);
       // }
     int i,j;
-    fill_ghosts(E_prev);
+    if(!cb.noComm) {
+      fill_ghosts(E_prev);
+    }  
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -191,8 +193,11 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 
   stats(E_prev, m, n, &mx, &sumSq); 
 
-  MPI_Reduce(&sumSq, &reducedSq, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-  MPI_Reduce(&mx, &Linf, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+  if(!cb.noComm) {
+    MPI_Reduce(&sumSq, &reducedSq, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&mx, &Linf, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+  }  
+ 
 
   L2 = L2Norm(reducedSq);
 
