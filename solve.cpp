@@ -50,17 +50,15 @@ double L2Norm(double sumSq){
 
 void fill_ghosts(double *E_prev)
 {
-
+  int i,j,msgs = 0;
   const int TOP_EDGE = 0;
   const int LEFT_EDGE = 0;
   const int BOTTOM_EDGE = cb.py - 1;
   const int RIGHT_EDGE = cb.px - 1; 
-  
-  int i, j, msgs = 0;
+
   MPI_Request send[4];
   MPI_Request recv[4];
   MPI_Status  statuses[4];
-
 
   // top boundary
   if (lb.pIdx == TOP_EDGE) for (i = (0 + CORNER); i < lb.n + CORNER; i++) E_prev[i] = E_prev[i + 2*(lb.n + PADDING)];
@@ -94,10 +92,49 @@ void fill_ghosts(double *E_prev)
   }
   // waiting before unpacking for left and right
   MPI_Waitall(msgs, recv, statuses);
-  if (lb.pIdy != LEFT_EDGE) for (i = lb.n + PADDING, j = 0; j < lb.m; i += lb.m + PADDING, j++) E_prev[i] = lb.recv_W[j];
+  if (lb.pIdy != LEFT_EDGE) for (i = lb.n + PADDING, j = 0; i < (lb.m+1)*(lb.n+2); i += lb.n + PADDING, j++) E_prev[i] = lb.recv_W[j];
   if (lb.pIdy != RIGHT_EDGE) for (i = (lb.n + CORNER) + (lb.n + PADDING), j = 0; j < lb.m; i += lb.n + PADDING, j++) E_prev[i] = lb.recv_E[j];
-
 }
+
+// void compute_inner(double *E, double *E_prev, double *R, int start_row, int end_row, int cols, double dt, double alpha) {
+//   int i, j;
+//    double *R_tmp = R;
+//    double *E_tmp = E;
+//    double *E_prev_tmp = E_prev;
+
+//   #ifdef FUSED
+//     // Solve for the excitation, a PDE
+//     for(j = start_row; j <= end_row; j+=(cols+2)) {
+//         E_tmp = E + j;
+//         E_prev_tmp = E_prev + j;
+//         R_tmp = R + j;
+//         for(i = 0; i < cols; i++) {
+//           E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(cols+2)]+E_prev_tmp[i-(cols+2)]);
+//           E_tmp[i] += -dt*(kk*E_tmp[i]*(E_tmp[i]-a)*(E_tmp[i]-1)+E_tmp[i]*R_tmp[i]);
+//           R_tmp[i] += dt*(epsilon+M1* R_tmp[i]/( E_tmp[i]+M2))*(-R_tmp[i]-kk*E_tmp[i]*(E_tmp[i]-b-1));
+//         }
+//     }
+//   #else
+//     // Solve for the excitation, a PDE
+//     for(j = start_row; j <= end_row; j+=(cols+2)) {
+//         E_tmp = E + j;
+//         E_prev_tmp = E_prev + j;
+//         for(i = 0; i < cols; i++) {
+//             E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(cols+2)]+E_prev_tmp[i-(cols+2)]);
+//         }
+//     }
+
+//     // Solve the ODE, advancing excitation and recovery variables to the next timtestep
+//     for(j = start_row; j <= end_row; j+=(cols+2)) {
+//         E_tmp = E + j;
+//         R_tmp = R + j;
+//         for(i = 0; i < cols; i++) {
+//             E_tmp[i] += -dt*(kk*E_tmp[i]*(E_tmp[i]-a)*(E_tmp[i]-1)+E_tmp[i]*R_tmp[i]);
+//             R_tmp[i] += dt*(epsilon+M1* R_tmp[i]/( E_tmp[i]+M2))*(-R_tmp[i]-kk*E_tmp[i]*(E_tmp[i]-b-1));
+//         }
+//     }
+//   #endif
+// }
 
 void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Plotter *plotter, double &L2, double &Linf){
 
@@ -114,6 +151,7 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  int innerBlockRowStartIndex = (n+2)+1;
  int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - (n+2);
 
+  int i, j;
 
  // We continue to sweep over the mesh until the simulation has reached
  // the desired number of iterations
@@ -134,6 +172,9 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 //////////////////////////////////////////////////////////////////////////////
 
 // #define FUSED 1
+    // int innerBlockRowStartIndex = 2*((n+2)+1);
+    // int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - 2*(n+2) + 1;
+    // compute_inner(E, E_prev, R, innerBlockRowStartIndex, innerBlockRowEndIndex, n-1, dt, alpha);
 
 #ifdef FUSED
     // Solve for the excitation, a PDE

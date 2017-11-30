@@ -102,7 +102,6 @@ void localInit(double *E, double *E_prev, double *R, int m, int n,
 //
 void init (double *E,double *E_prev,double *R,int m,int n){
     int i;
-    printf("My Rank is %d, My local size is %d and %d\n\n\n", lb.rank, lb.m, lb.n);
 
     int extra_x = n % cb.px;
     int extra_y = m % cb.py;
