@@ -192,7 +192,6 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 
 #ifdef FUSED
     // Solve for the excitation, a PDE
-    printf("Fusing\n");
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         E_prev_tmp = E_prev + j;
@@ -206,7 +205,6 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
     }
 #else
     // Solve for the excitation, a PDE
-    printf("Not fusing\n");
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         E_prev_tmp = E_prev + j;
@@ -256,8 +254,7 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 
           
           _mm_storeu_pd(E_tmp+i,e_temp_sse);
-          
-          // E_tmp[i] += -dt*( kk * E_tmp[i] * (E_tmp[i]-a) * (E_tmp[i]-1) + E_tmp[i] * R_tmp[i]);
+
 
            temp1 = _mm_sub_pd(e_temp_sse, constant_b_sse);
            temp2 = _mm_sub_pd(temp1,constant_1_sse);
@@ -275,11 +272,6 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
            _mm_storeu_pd(R_tmp+i,temp3);
 
 
-
-
-
-
-           //R_tmp[i] += dt*( epsilon   + M1 * R_tmp[i] / ( E_tmp[i]  + M2) ) * (-R_tmp[i] -kk * E_tmp[i] * (E_tmp[i] - b - 1 ));
 
         }
     }
