@@ -151,7 +151,11 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  int innerBlockRowStartIndex = (n+2)+1;
  int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - (n+2);
 
-  int i, j;
+ int i, j;
+ __m128d alpha_sse = _mm_set1_pd(alpha);
+ __m128d constant_4_sse = _mm_set1_pd(4);
+ register __m128d temp1, temp2, temp3;
+ __m128d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle;
 
  // We continue to sweep over the mesh until the simulation has reached
  // the desired number of iterations
@@ -193,8 +197,27 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         E_prev_tmp = E_prev + j;
-        for(i = 0; i < n; i++) {
-            E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(n+2)]+E_prev_tmp[i-(n+2)]);
+        //Edits for SSE
+        // for(i = 0; i < n; i++) {
+        //     E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(n+2)]+E_prev_tmp[i-(n+2)]);
+        for(i = 0; i < n; i+=2) {
+            
+            E_prev_tmp_north = _mm_loadu_pd(E_prev_tmp + i - (n + 2));
+            E_prev_tmp_south = _mm_loadu_pd(E_prev_tmp + i + (n + 2));
+            E_prev_tmp_east = _mm_loadu_pd(E_prev_tmp + i + 1);
+            E_prev_tmp_west = _mm_loadu_pd(E_prev_tmp + i -1);
+            E_prev_tmp_middle = _mm_loadu_pd (E_prev_tmp + i );
+
+            temp1 = _mm_add_pd(E_prev_tmp_north,E_prev_tmp_south); 
+            temp2 = _mm_add_pd(E_prev_tmp_east,temp1);
+            temp1 = _mm_add_pd(E_prev_tmp_south,temp2);
+            temp2 = _mm_mul_pd(constant_4_sse,E_prev_tmp_middle);
+            temp3 = _mm_sub_pd(temp1,temp2);
+            temp1 = _mm_mul_pd(alpha_sse,temp3);
+            temp2 = _mm_add_pd(E_prev_tmp_middle,temp1);
+            _mm_storeu_pd(E_tmp + i,temp2 );
+
+            //E_tmp[i] = E_prev_tmp[i]  + alpha * ( E_prev_tmp[i+1] + E_prev_tmp[i-1] - 4 * E_prev_tmp[i] + E_prev_tmp[i+(n+2)] + E_prev_tmp[i-(n+2)]) ;
         }
     }
 
