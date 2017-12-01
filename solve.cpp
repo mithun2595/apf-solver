@@ -35,7 +35,7 @@ enum { TOP = 0, RIGHT, LEFT, BOTTOM };
 #ifdef SSE_VEC
 // If you intend to vectorize using SSE instructions, you must
 // disable the compiler's auto-vectorizer
-__attribute__((optimize("no-tree-vectorize")))
+__attribute__((optimize("no-tre_temp_sse-vectorize")))
 #endif 
 
 // The L2 norm of an array is computed by taking sum of the squares
@@ -154,10 +154,18 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  int i, j;
  __m128d alpha_sse = _mm_set1_pd(alpha);
  __m128d constant_4_sse = _mm_set1_pd(4);
+ __m128d e_temp_sse, r_temp_sse;
+ __m128d constant_1_sse = _mm_set1_pd(1);
+ __m128d constant_a_sse = _mm_set1_pd(a); 
+ __m128d constant_kk_sse = _mm_set1_pd(kk);
+ __m128d constant_dt_sse = _mm_set1_pd(dt);
+  __m128d constant_b_sse = _mm_set1_pd(b);
+  __m128d constant_M2_sse = _mm_set1_pd(M1);
+  __m128d epsilon_sse = _mm_set1_pd(epsilon);
  register __m128d temp1, temp2, temp3;
  __m128d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle;
 
- // We continue to sweep over the mesh until the simulation has reached
+ // We continue to swe_temp_ssep over the mesh until the simulation has reached
  // the desired number of iterations
   for (niter = 0; niter < cb.niters; niter++) {
     
@@ -175,13 +183,14 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 
 //////////////////////////////////////////////////////////////////////////////
 
-// #define FUSED 1
+//#define FUSED 1
     // int innerBlockRowStartIndex = 2*((n+2)+1);
     // int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - 2*(n+2) + 1;
     // compute_inner(E, E_prev, R, innerBlockRowStartIndex, innerBlockRowEndIndex, n-1, dt, alpha);
 
 #ifdef FUSED
     // Solve for the excitation, a PDE
+    printf("Fusing\n");
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         E_prev_tmp = E_prev + j;
@@ -191,9 +200,11 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
           E_tmp[i] += -dt*(kk*E_tmp[i]*(E_tmp[i]-a)*(E_tmp[i]-1)+E_tmp[i]*R_tmp[i]);
           R_tmp[i] += dt*(epsilon+M1* R_tmp[i]/( E_tmp[i]+M2))*(-R_tmp[i]-kk*E_tmp[i]*(E_tmp[i]-b-1));
         }
+
     }
 #else
     // Solve for the excitation, a PDE
+    printf("Not fusing\n");
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         E_prev_tmp = E_prev + j;
@@ -208,16 +219,15 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
             E_prev_tmp_west = _mm_loadu_pd(E_prev_tmp + i -1);
             E_prev_tmp_middle = _mm_loadu_pd (E_prev_tmp + i );
 
-            temp1 = _mm_add_pd(E_prev_tmp_north,E_prev_tmp_south); 
-            temp2 = _mm_add_pd(E_prev_tmp_east,temp1);
-            temp1 = _mm_add_pd(E_prev_tmp_south,temp2);
+            temp1 = _mm_add_pd(E_prev_tmp_east,E_prev_tmp_west);
+            temp2 = _mm_add_pd(E_prev_tmp_south,temp1);
+            temp1 = _mm_add_pd(E_prev_tmp_north,temp2);
             temp2 = _mm_mul_pd(constant_4_sse,E_prev_tmp_middle);
             temp3 = _mm_sub_pd(temp1,temp2);
-            temp1 = _mm_mul_pd(alpha_sse,temp3);
-            temp2 = _mm_add_pd(E_prev_tmp_middle,temp1);
-            _mm_storeu_pd(E_tmp + i,temp2 );
+            temp2 = _mm_mul_pd(alpha_sse, temp3);
+            temp1 = _mm_add_pd(E_prev_tmp_middle,temp2);
+            _mm_storeu_pd(E_tmp + i, temp1);
 
-            //E_tmp[i] = E_prev_tmp[i]  + alpha * ( E_prev_tmp[i+1] + E_prev_tmp[i-1] - 4 * E_prev_tmp[i] + E_prev_tmp[i+(n+2)] + E_prev_tmp[i-(n+2)]) ;
         }
     }
 
@@ -225,9 +235,31 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
         E_tmp = E + j;
         R_tmp = R + j;
-        for(i = 0; i < n; i++) {
-            E_tmp[i] += -dt*(kk*E_tmp[i]*(E_tmp[i]-a)*(E_tmp[i]-1)+E_tmp[i]*R_tmp[i]);
-            R_tmp[i] += dt*(epsilon+M1* R_tmp[i]/( E_tmp[i]+M2))*(-R_tmp[i]-kk*E_tmp[i]*(E_tmp[i]-b-1));
+        for(i = 0; i < n; i+=2) {
+
+          e_temp_sse = _mm_loadu_pd(E_tmp +i);
+          r_temp_sse = _mm_loadu_pd(R_tmp +i);
+
+           temp1 = _mm_sub_pd(e_temp_sse,constant_a_sse);
+           temp2 = _mm_sub_pd(e_temp_sse,constant_1_sse);
+           temp3 = _mm_mul_pd(temp1,temp2);
+           temp1 = _mm_mul_pd(e_temp_sse,temp3);
+           temp2 = _mm_mul_pd(constant_kk_sse,temp1);
+           temp3 = _mm_mul_pd (e_temp_sse,r_temp_sse);
+           temp1 = _mm_add_pd(temp2,temp3);
+           temp2 = _mm_mul_pd(constant_dt_sse,temp1);
+           temp3 = _mm_sub_pd (e_temp_sse,temp2);
+           _mm_storeu_pd(E_tmp+i,temp3);
+           //e_temp_sse = _mm_sub_pd(e_temp_sse,_mm_mul_pd(constant_dt_sse,_mm_add_pd(_mm_mul_pd(_mm_mul_pd(constant_kk_sse , _mm_mul_pd(e_temp_sse,_mm_sub_pd(e_temp_sse, constant_a_sse))), _mm_sub_pd(e_temp_sse, constant_1_sse)),_mm_mul_pd(e_temp_sse,r_temp_sse))));
+
+          
+          // _mm_storeu_pd(E_tmp+i,e_temp_sse);
+          
+          //E_tmp[i] += -dt*( kk * E_tmp[i] * (E_tmp[i]-a) * (E_tmp[i]-1) + E_tmp[i] * R_tmp[i]);
+
+           
+           R_tmp[i] += dt*( epsilon   + M1 * R_tmp[i] / ( E_tmp[i]  + M2) ) * (-R_tmp[i] -kk * E_tmp[i] * (E_tmp[i] - b - 1 ));
+
         }
     }
 #endif
