@@ -154,14 +154,16 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  int i, j;
  __m128d alpha_sse = _mm_set1_pd(alpha);
  __m128d constant_4_sse = _mm_set1_pd(4);
+  __m128d constant_0_sse = _mm_set1_pd(0);
  __m128d e_temp_sse, r_temp_sse;
  __m128d constant_1_sse = _mm_set1_pd(1);
  __m128d constant_a_sse = _mm_set1_pd(a); 
  __m128d constant_kk_sse = _mm_set1_pd(kk);
  __m128d constant_dt_sse = _mm_set1_pd(dt);
-  __m128d constant_b_sse = _mm_set1_pd(b);
-  __m128d constant_M2_sse = _mm_set1_pd(M1);
-  __m128d epsilon_sse = _mm_set1_pd(epsilon);
+ __m128d constant_b_sse = _mm_set1_pd(b);
+ __m128d constant_M1_sse = _mm_set1_pd(M1);
+ __m128d constant_M2_sse = _mm_set1_pd(M2);
+ __m128d epsilon_sse = _mm_set1_pd(epsilon);
  register __m128d temp1, temp2, temp3;
  __m128d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle;
 
@@ -250,15 +252,34 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
            temp2 = _mm_mul_pd(constant_dt_sse,temp1);
            temp3 = _mm_sub_pd (e_temp_sse,temp2);
            _mm_storeu_pd(E_tmp+i,temp3);
-           //e_temp_sse = _mm_sub_pd(e_temp_sse,_mm_mul_pd(constant_dt_sse,_mm_add_pd(_mm_mul_pd(_mm_mul_pd(constant_kk_sse , _mm_mul_pd(e_temp_sse,_mm_sub_pd(e_temp_sse, constant_a_sse))), _mm_sub_pd(e_temp_sse, constant_1_sse)),_mm_mul_pd(e_temp_sse,r_temp_sse))));
+           e_temp_sse = _mm_sub_pd(e_temp_sse,_mm_mul_pd(constant_dt_sse,_mm_add_pd(_mm_mul_pd(_mm_mul_pd(constant_kk_sse , _mm_mul_pd(e_temp_sse,_mm_sub_pd(e_temp_sse, constant_a_sse))), _mm_sub_pd(e_temp_sse, constant_1_sse)),_mm_mul_pd(e_temp_sse,r_temp_sse))));
 
           
-          // _mm_storeu_pd(E_tmp+i,e_temp_sse);
+          _mm_storeu_pd(E_tmp+i,e_temp_sse);
           
-          //E_tmp[i] += -dt*( kk * E_tmp[i] * (E_tmp[i]-a) * (E_tmp[i]-1) + E_tmp[i] * R_tmp[i]);
+          // E_tmp[i] += -dt*( kk * E_tmp[i] * (E_tmp[i]-a) * (E_tmp[i]-1) + E_tmp[i] * R_tmp[i]);
 
-           
-           R_tmp[i] += dt*( epsilon   + M1 * R_tmp[i] / ( E_tmp[i]  + M2) ) * (-R_tmp[i] -kk * E_tmp[i] * (E_tmp[i] - b - 1 ));
+           temp1 = _mm_sub_pd(e_temp_sse, constant_b_sse);
+           temp2 = _mm_sub_pd(temp1,constant_1_sse);
+           temp1 =_mm_mul_pd(e_temp_sse,temp2);
+           temp2 = _mm_mul_pd(constant_kk_sse,temp1);
+           temp3 = _mm_sub_pd(constant_0_sse,r_temp_sse);
+           temp1 = _mm_sub_pd(temp3,temp2); ///MARK
+           temp2 = _mm_add_pd(e_temp_sse,constant_M2_sse);
+           temp3 = _mm_mul_pd(constant_M1_sse,r_temp_sse);
+           temp2 = _mm_div_pd(temp3,temp2);
+           temp3 = _mm_add_pd(epsilon_sse,temp2);
+           temp2 = _mm_mul_pd(temp3,temp1);
+           temp1 = _mm_mul_pd(constant_dt_sse,temp2);
+           temp3 = _mm_add_pd(r_temp_sse,temp1);
+           _mm_storeu_pd(R_tmp+i,temp3);
+
+
+
+
+
+
+           //R_tmp[i] += dt*( epsilon   + M1 * R_tmp[i] / ( E_tmp[i]  + M2) ) * (-R_tmp[i] -kk * E_tmp[i] * (E_tmp[i] - b - 1 ));
 
         }
     }
