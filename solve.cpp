@@ -250,11 +250,6 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
            temp2 = _mm_mul_pd(constant_dt_sse,temp1);
            temp3 = _mm_sub_pd (e_temp_sse,temp2);
            _mm_storeu_pd(E_tmp+i,temp3);
-           e_temp_sse = _mm_sub_pd(e_temp_sse,_mm_mul_pd(constant_dt_sse,_mm_add_pd(_mm_mul_pd(_mm_mul_pd(constant_kk_sse , _mm_mul_pd(e_temp_sse,_mm_sub_pd(e_temp_sse, constant_a_sse))), _mm_sub_pd(e_temp_sse, constant_1_sse)),_mm_mul_pd(e_temp_sse,r_temp_sse))));
-
-          
-          _mm_storeu_pd(E_tmp+i,e_temp_sse);
-
 
            temp1 = _mm_sub_pd(e_temp_sse, constant_b_sse);
            temp2 = _mm_sub_pd(temp1,constant_1_sse);
