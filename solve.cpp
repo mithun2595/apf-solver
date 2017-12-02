@@ -165,6 +165,7 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  __m128d constant_M2_sse = _mm_set1_pd(M2);
  __m128d epsilon_sse = _mm_set1_pd(epsilon);
  register __m128d temp1, temp2, temp3;
+ register __m128d val1, val2, val3, val4, val5, val6, val7, val8;
  __m128d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle;
 
  // We continue to swe_temp_ssep over the mesh until the simulation has reached
@@ -198,7 +199,7 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
         R_tmp = R + j;
       	for(i = 0; i < n; i++) {
           E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(n+2)]+E_prev_tmp[i-(n+2)]);
-          E_tmp[i] += -dt*(kk*E_tmp[i]*(E_tmp[i]-a)*(E_tmp[i]-1)+E_tmp[i]*R_tmp[i]);
+          E_tmp[i] += -dt*( kk * E_tmp[i] * (E_tmp[i]-a) * (E_tmp[i]-1) + E_tmp[i] * R_tmp[i]);
           R_tmp[i] += dt*(epsilon+M1* R_tmp[i]/( E_tmp[i]+M2))*(-R_tmp[i]-kk*E_tmp[i]*(E_tmp[i]-b-1));
         }
 
@@ -240,16 +241,41 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
           e_temp_sse = _mm_loadu_pd(E_tmp +i);
           r_temp_sse = _mm_loadu_pd(R_tmp +i);
 
-           temp1 = _mm_sub_pd(e_temp_sse,constant_a_sse);
-           temp2 = _mm_sub_pd(e_temp_sse,constant_1_sse);
-           temp3 = _mm_mul_pd(temp1,temp2);
-           temp1 = _mm_mul_pd(e_temp_sse,temp3);
-           temp2 = _mm_mul_pd(constant_kk_sse,temp1);
-           temp3 = _mm_mul_pd (e_temp_sse,r_temp_sse);
-           temp1 = _mm_add_pd(temp2,temp3);
-           temp2 = _mm_mul_pd(constant_dt_sse,temp1);
-           temp3 = _mm_sub_pd (e_temp_sse,temp2);
-           _mm_storeu_pd(E_tmp+i,temp3);
+            val7 = _mm_sub_pd(e_temp_sse,constant_a_sse);
+            val8 = _mm_sub_pd(e_temp_sse,constant_1_sse);
+            val4 = _mm_mul_pd (e_temp_sse,r_temp_sse);
+            val6 = _mm_mul_pd(val7,val8);
+            val5 = _mm_mul_pd(e_temp_sse,val6);
+            val3 = _mm_mul_pd(constant_kk_sse,val5);
+            val2 = _mm_add_pd (val3,val4);
+            val1 = _mm_mul_pd(constant_dt_sse,val2);
+            e_temp_sse = _mm_sub_pd(e_temp_sse,val1); 
+            _mm_storeu_pd(E_tmp+i,e_temp_sse);     
+
+            // temp1 = _mm_sub_pd(e_temp_sse,constant_a_sse);
+            // temp1 = _mm_mul_pd(e_temp_sse,temp1);
+            // temp1 = _mm_mul_pd(constant_kk_sse, temp1);
+            // temp2 = _mm_sub_pd(e_temp_sse,constant_1_sse);
+            // temp3 = _mm_mul_pd(temp1,temp2);
+            // temp2 = _mm_mul_pd (e_temp_sse,r_temp_sse);
+            // temp1 = _mm_add_pd(temp3,temp2);
+            // temp2 = _mm_mul_pd(constant_dt_sse,temp1);
+            // temp3 = _mm_sub_pd (e_temp_sse,temp2);
+            // _mm_storeu_pd(E_tmp+i,temp3);
+
+          //  e_temp_sse = _mm_sub_pd(
+          //   e_temp_sse,
+          //   _mm_mul_pd(constant_dt_sse,
+          //     _mm_add_pd(
+          //       _mm_mul_pd(
+          //         _mm_mul_pd(constant_kk_sse , 
+          //           _mm_mul_pd(e_temp_sse,
+          //             _mm_sub_pd(e_temp_sse, constant_a_sse))
+          //           ), 
+          //         _mm_sub_pd(e_temp_sse, constant_1_sse)
+          //         ),
+          //       _mm_mul_pd(e_temp_sse,r_temp_sse)))); // sec for add pd
+          // _mm_storeu_pd(E_tmp+i,e_temp_sse);
 
            temp1 = _mm_sub_pd(e_temp_sse, constant_b_sse);
            temp2 = _mm_sub_pd(temp1,constant_1_sse);
