@@ -4,7 +4,7 @@
 #
 #SBATCH --account=csd562
 #SBATCH --job-name=apf-strong-scale-48
-#SBATCH --output="Communication_overhead-96-1024.out"
+#SBATCH --output="strong_scaling-96-1024.out"
 #SBATCH --partition="compute"
 #SBATCH --nodes=64
 #SBATCH --ntasks-per-node=16
@@ -21,13 +21,13 @@
 #ibrun -np 72 ./apf -n 1800 -i 2000 -x 2 -y 36
 #ibrun -np 84 ./apf -n 1800 -i 2000 -x 2 -y 42
 
-ibrun -np 96 ./apf -n 1800 -i 2000 -x 2 -y 48 -k 
-ibrun -np 192 ./apf -n 1800 -i 2000 -x 2 -y 96 -k
-ibrun -np 240 ./apf -n 1800 -i 2000 -x 2 -y 120 -k
-ibrun -np 384 ./apf -n 1800 -i 2000 -x 2 -y 192 -k
-ibrun -np 480 ./apf -n 1800 -i 2000 -x 2 -y 240 -k
-ibrun -np 960 ./apf -n 1800 -i 2000 -x 2 -y 480 -k
-ibrun -np 1024 ./apf -n 1800 -i 2000 -x 2 -y 512 -k
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 2 -y 48 
+ibrun -np 192 ./apf -n 1800 -i 2000 -x 2 -y 96 
+ibrun -np 240 ./apf -n 1800 -i 2000 -x 2 -y 120 
+ibrun -np 384 ./apf -n 1800 -i 2000 -x 2 -y 192 
+ibrun -np 480 ./apf -n 1800 -i 2000 -x 2 -y 240 
+ibrun -np 960 ./apf -n 1800 -i 2000 -x 2 -y 480 
+ibrun -np 1024 ./apf -n 1800 -i 2000 -x 2 -y 512 
 
 
 #ibrun -np 48 ./apf -n 1800 -i 2000 -x 4 -y 12
