@@ -1,0 +1,1972 @@
+
+[Simulation begins] Sat Dec  2 22:29:25 2017
+
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 48
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:25 2017
+
+End at iteration 1999
+Max norm: 0.00000e+00, L2norm: 0.00000e+00
+Running Time: 0.183744 sec. [987 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 48      N     2000  0.1837 987.5    0.00000e+00 0.00000e+00
+  -----
+
+[Simulation begins] Sat Dec  2 22:29:27 2017
+
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 96
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:27 2017
+
+End at iteration 1999
+Max norm: 1.11221e-312, L2norm: 0.00000e+00
+Running Time: 0.0939319 sec. [1.93e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 96      N     2000  0.09393 1932    1.11221e-312 0.00000e+00
+  -----
+
+[Simulation begins] Sat Dec  2 22:29:29 2017
+
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 120
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:30 2017
+
+End at iteration 1999
+Max norm: 0.00000e+00, L2norm: 0.00000e+00
+Running Time: 0.0715611 sec. [2.54e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 120      N     2000  0.07156 2535    0.00000e+00 0.00000e+00
+  -----
+
+[Simulation begins] Sat Dec  2 22:29:33 2017
+
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 240
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:33 2017
+
+End at iteration 1999
+Max norm: 6.95321e-310, L2norm: 0.00000e+00
+Running Time: 0.037997 sec. [4.78e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 240      N     2000  0.038 4775    6.95321e-310 0.00000e+00
+  -----
+IBRUN WARNING: Your job will put more ranks on each node (30) than the cores physically available to each node (24)
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+
+[Simulation begins] Sat Dec  2 22:29:39 2017
+
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 480
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:40 2017
+
+End at iteration 1999
+Max norm: 6.95318e-310, L2norm: 0.00000e+00
+Running Time: 0.057507 sec. [3.16e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 480      N     2000  0.05751 3155    6.95318e-310 0.00000e+00
+  -----
+IBRUN WARNING: Your job will put more ranks on each node (32) than the cores physically available to each node (24)
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+Warning! : Core id 1 does not exist on this architecture! 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 1 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 6 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 13 does not exist on this architecture! 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 3 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 0 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 12 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 8 does not exist on this architecture! 
+Warning! : Core id 2 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 7 does not exist on this architecture! 
+CPU Affinity is undefined 
+CPU Affinity is undefined 
+Warning! : Core id 5 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 10 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 11 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 14 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 9 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+Warning! : Core id 4 does not exist on this architecture! 
+CPU Affinity is undefined 
+
+[Simulation begins] Sat Dec  2 22:29:47 2017
+
+dt= 0.00144443, # iters = 2000
+m x n = 1800 x 1800
+processor geometry: 2 x 512
+
+Compiled with MPI ENABLED
+Communication shut off
+
+[Simulation completes] Sat Dec  2 22:29:48 2017
+
+End at iteration 1999
+Max norm: 1.11221e-312, L2norm: 0.00000e+00
+Running Time: 0.0459571 sec. [3.95e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 1800 1800    2 512      N     2000  0.04596 3948    1.11221e-312 0.00000e+00
+  -----

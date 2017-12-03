@@ -4,7 +4,7 @@
 #
 #SBATCH --account=csd562
 #SBATCH --job-name=apf-strong-scale-48
-#SBATCH --output="apf-strong-scale-48.out"
+#SBATCH --output="AVX_test.out"
 #SBATCH --partition="compute"
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=24

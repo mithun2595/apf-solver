@@ -153,21 +153,21 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
  int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - (n+2);
 
  int i, j;
- __m512d alpha_sse = _mm512_set1_pd(alpha);
- __m512d constant_4_sse = _mm512_set1_pd(4);
- __m512d constant_0_sse = _mm512_set1_pd(0);
- __m512d e_temp_sse, r_temp_sse;
- __m512d constant_1_sse = _mm512_set1_pd(1);
- __m512d constant_a_sse = _mm512_set1_pd(a); 
- __m512d constant_kk_sse = _mm512_set1_pd(kk);
- __m512d constant_dt_sse = _mm512_set1_pd(dt);
- __m512d constant_b_sse = _mm512_set1_pd(b);
- __m512d constant_M1_sse = _mm512_set1_pd(M1);
- __m512d constant_M2_sse = _mm512_set1_pd(M2);
- __m512d epsilon_sse = _mm512_set1_pd(epsilon);
- register __m512d temp1, temp2, temp3;
- //register __m512d val1, val2, val3, val4, val5, val6, val7, val8;
- __m512d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle; 
+ __m256d alpha_sse = _mm256_set1_pd(alpha);
+ __m256d constant_4_sse = _mm256_set1_pd(4);
+ __m256d constant_0_sse = _mm256_set1_pd(0);
+ __m256d e_temp_sse, r_temp_sse;
+ __m256d constant_1_sse = _mm256_set1_pd(1);
+ __m256d constant_a_sse = _mm256_set1_pd(a); 
+ __m256d constant_kk_sse = _mm256_set1_pd(kk);
+ __m256d constant_dt_sse = _mm256_set1_pd(dt);
+ __m256d constant_b_sse = _mm256_set1_pd(b);
+ __m256d constant_M1_sse = _mm256_set1_pd(M1);
+ __m256d constant_M2_sse = _mm256_set1_pd(M2);
+ __m256d epsilon_sse = _mm256_set1_pd(epsilon);
+ register __m256d temp1, temp2, temp3;
+ //register __m256d val1, val2, val3, val4, val5, val6, val7, val8;
+ __m256d E_prev_tmp_north, E_prev_tmp_south, E_prev_tmp_east, E_prev_tmp_west, E_prev_tmp_middle; 
 
  // We continue to swe_temp_ssep over the mesh until the simulation has reached
  // the desired number of iterations
@@ -215,20 +215,20 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
         //     E_tmp[i] = E_prev_tmp[i]+alpha*(E_prev_tmp[i+1]+E_prev_tmp[i-1]-4*E_prev_tmp[i]+E_prev_tmp[i+(n+2)]+E_prev_tmp[i-(n+2)]);
         for(i = 0; i < n; i+=4) {
             
-            E_prev_tmp_north = _mm512_loadu_pd(E_prev_tmp + i - (n + 2));
-            E_prev_tmp_south = _mm512_loadu_pd(E_prev_tmp + i + (n + 2));
-            E_prev_tmp_east = _mm512_loadu_pd(E_prev_tmp + i + 1);
-            E_prev_tmp_west = _mm512_loadu_pd(E_prev_tmp + i -1);
-            E_prev_tmp_middle = _mm512_loadu_pd (E_prev_tmp + i );
+            E_prev_tmp_north = _mm256_loadu_pd(E_prev_tmp + i - (n + 2));
+            E_prev_tmp_south = _mm256_loadu_pd(E_prev_tmp + i + (n + 2));
+            E_prev_tmp_east = _mm256_loadu_pd(E_prev_tmp + i + 1);
+            E_prev_tmp_west = _mm256_loadu_pd(E_prev_tmp + i -1);
+            E_prev_tmp_middle = _mm256_loadu_pd (E_prev_tmp + i );
 
-            temp1 = _mm512_add_pd(E_prev_tmp_east,E_prev_tmp_west);
-            temp2 = _mm512_add_pd(E_prev_tmp_south,temp1);
-            temp1 = _mm512_add_pd(E_prev_tmp_north,temp2);
-            temp2 = _mm512_mul_pd(constant_4_sse,E_prev_tmp_middle);
-            temp3 = _mm512_sub_pd(temp1,temp2);
-            temp2 = _mm512_mul_pd(alpha_sse, temp3);
-            temp1 = _mm512_add_pd(E_prev_tmp_middle,temp2);
-            _mm512_storeu_pd(E_tmp + i, temp1);
+            temp1 = _mm256_add_pd(E_prev_tmp_east,E_prev_tmp_west);
+            temp2 = _mm256_add_pd(E_prev_tmp_south,temp1);
+            temp1 = _mm256_add_pd(E_prev_tmp_north,temp2);
+            temp2 = _mm256_mul_pd(constant_4_sse,E_prev_tmp_middle);
+            temp3 = _mm256_sub_pd(temp1,temp2);
+            temp2 = _mm256_mul_pd(alpha_sse, temp3);
+            temp1 = _mm256_add_pd(E_prev_tmp_middle,temp2);
+            _mm256_storeu_pd(E_tmp + i, temp1);
 
         }
     }
@@ -239,35 +239,35 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
         R_tmp = R + j;
         for(i = 0; i < n; i+=4) {
 
-          e_temp_sse = _mm512_loadu_pd(E_tmp +i);
-          r_temp_sse = _mm512_loadu_pd(R_tmp +i);
+          e_temp_sse = _mm256_loadu_pd(E_tmp +i);
+          r_temp_sse = _mm256_loadu_pd(R_tmp +i);
 
-            temp1 = _mm512_sub_pd(e_temp_sse,constant_a_sse);
-            temp2 = _mm512_sub_pd(e_temp_sse,constant_1_sse);
-            temp3 = _mm512_mul_pd (e_temp_sse,r_temp_sse);
-            temp1 = _mm512_mul_pd(temp1,temp2);
-            temp2 = _mm512_mul_pd(e_temp_sse,temp1);
-            temp1 = _mm512_mul_pd(constant_kk_sse,temp2);
-            temp2 = _mm512_add_pd (temp1,temp3);
-            temp1 = _mm512_mul_pd(constant_dt_sse,temp2);
-            e_temp_sse = _mm512_sub_pd(e_temp_sse,temp1); 
-            _mm512_storeu_pd(E_tmp+i,e_temp_sse);
+            temp1 = _mm256_sub_pd(e_temp_sse,constant_a_sse);
+            temp2 = _mm256_sub_pd(e_temp_sse,constant_1_sse);
+            temp3 = _mm256_mul_pd (e_temp_sse,r_temp_sse);
+            temp1 = _mm256_mul_pd(temp1,temp2);
+            temp2 = _mm256_mul_pd(e_temp_sse,temp1);
+            temp1 = _mm256_mul_pd(constant_kk_sse,temp2);
+            temp2 = _mm256_add_pd (temp1,temp3);
+            temp1 = _mm256_mul_pd(constant_dt_sse,temp2);
+            e_temp_sse = _mm256_sub_pd(e_temp_sse,temp1); 
+            _mm256_storeu_pd(E_tmp+i,e_temp_sse);
 
 
-           temp1 = _mm512_sub_pd(e_temp_sse, constant_b_sse);
-           temp2 = _mm512_sub_pd(temp1,constant_1_sse);
-           temp1 =_mm512_mul_pd(e_temp_sse,temp2);
-           temp2 = _mm512_mul_pd(constant_kk_sse,temp1);
-           temp3 = _mm512_sub_pd(constant_0_sse,r_temp_sse);
-           temp1 = _mm512_sub_pd(temp3,temp2); 
-           temp2 = _mm512_add_pd(e_temp_sse,constant_M2_sse);
-           temp3 = _mm512_mul_pd(constant_M1_sse,r_temp_sse);
-           temp2 = _mm_div_pd(temp3,temp2);
-           temp3 = _mm512_add_pd(epsilon_sse,temp2);
-           temp2 = _mm512_mul_pd(temp3,temp1);
-           temp1 = _mm512_mul_pd(constant_dt_sse,temp2);
-           temp3 = _mm512_add_pd(r_temp_sse,temp1);
-           _mm512_storeu_pd(R_tmp+i,temp3);
+           temp1 = _mm256_sub_pd(e_temp_sse, constant_b_sse);
+           temp2 = _mm256_sub_pd(temp1,constant_1_sse);
+           temp1 =_mm256_mul_pd(e_temp_sse,temp2);
+           temp2 = _mm256_mul_pd(constant_kk_sse,temp1);
+           temp3 = _mm256_sub_pd(constant_0_sse,r_temp_sse);
+           temp1 = _mm256_sub_pd(temp3,temp2); 
+           temp2 = _mm256_add_pd(e_temp_sse,constant_M2_sse);
+           temp3 = _mm256_mul_pd(constant_M1_sse,r_temp_sse);
+           temp2 = _mm256_div_pd(temp3,temp2);
+           temp3 = _mm256_add_pd(epsilon_sse,temp2);
+           temp2 = _mm256_mul_pd(temp3,temp1);
+           temp1 = _mm256_mul_pd(constant_dt_sse,temp2);
+           temp3 = _mm256_add_pd(r_temp_sse,temp1);
+           _mm256_storeu_pd(R_tmp+i,temp3);
 
 
 
