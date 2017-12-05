@@ -1,0 +1,57 @@
+                    CSE 260, Parallel Computation
+                            (Fall 2017)
+           Department of Computer Science and Engineering 	
+                 University of California, San Diego 	
+
+
+               Team Self Evaluation Form, Assignment #3
+
+Each team must submit one copy of this self evaluation form. 
+The members of each team should discuss how they
+worked together and what to write for the evaluation.
+If you worked alone leave column B blank
+
+(1) List the names of your team members:
+
+A: Naga Harshini Voruganti
+
+ 
+B: 
+
+ 
+ 
+(2) Estimate how much time each team member devoted to this project, in HOURS.
+
+  	                        A 	       B
+meetings 	  	  	     10       
+coding 	  	  	       55-60            
+writeup 	  	  	     8         
+planning (alone) 	  	 5-6 	       
+total (including meetings) 70-80	   	 
+
+
+(3) Discuss the following.
+(a) If you worked in a team, what were the major responsibilities
+    of each team member?
+    We mostly pair programmed. But I was the driver for the
+implementation of Vectorization and my teammate reviewed. And we reversed our
+roles for the implementation of MPI.
+(b) Did you complete the assignment?
+    yes
+(c) What were your major strengths and weaknesses in doing this
+    assignment (individually or in a team)?
+    If in a team, also discuss how your team worked together.
+    We were able to coordinate well for pair programming. Our major
+challenge was debugging the code. We had to spend a lot of time to match the
+errors with default runs.
+(d) What  lessons did you learn from these events.
+    Communication overhead can bottleneck our performance. Also, the
+impact we would be having with number of nodes we use on comet is huge.
+which the performance almost doubled.
+(e) If in a team, whether and how you plan to change the way
+    your work together .
+    None
+(f) Anything else that comes to mind.
+    None
+
+
