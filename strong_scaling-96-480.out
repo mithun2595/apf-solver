@@ -1,0 +1,90 @@
+
+[Simulation begins] Mon Dec  4 21:01:43 2017
+
+dt= 7.41769e-05, # iters = 2000
+m x n = 8000 x 8000
+processor geometry: 2 x 48
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Mon Dec  4 21:01:54 2017
+
+End at iteration 1999
+Max norm: 9.99936e-01, L2norm: 6.74579e-01
+Running Time: 10.2459 sec. [350 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 8000 8000    2 48      Y     2000  10.25 349.8    9.99936e-01 6.74579e-01
+  -----
+
+[Simulation begins] Mon Dec  4 21:01:55 2017
+
+dt= 7.41769e-05, # iters = 2000
+m x n = 8000 x 8000
+processor geometry: 2 x 96
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Mon Dec  4 21:02:02 2017
+
+End at iteration 1999
+Max norm: 9.99936e-01, L2norm: 6.74579e-01
+Running Time: 6.56326 sec. [546 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 8000 8000    2 96      Y     2000  6.563 546.1    9.99936e-01 6.74579e-01
+  -----
+
+[Simulation begins] Mon Dec  4 21:02:04 2017
+
+dt= 7.41769e-05, # iters = 2000
+m x n = 8000 x 8000
+processor geometry: 2 x 120
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Mon Dec  4 21:02:09 2017
+
+End at iteration 1999
+Max norm: 9.99936e-01, L2norm: 6.74579e-01
+Running Time: 5.28807 sec. [678 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 8000 8000    2 120      Y     2000  5.288 677.8    9.99936e-01 6.74579e-01
+  -----
+
+[Simulation begins] Mon Dec  4 21:02:12 2017
+
+dt= 7.41769e-05, # iters = 2000
+m x n = 8000 x 8000
+processor geometry: 2 x 192
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Mon Dec  4 21:02:15 2017
+
+End at iteration 1999
+Max norm: 9.99936e-01, L2norm: 6.74579e-01
+Running Time: 3.19013 sec. [1.12e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 8000 8000    2 192      Y     2000  3.19 1123    9.99936e-01 6.74579e-01
+  -----
+
+[Simulation begins] Mon Dec  4 21:02:17 2017
+
+dt= 7.41769e-05, # iters = 2000
+m x n = 8000 x 8000
+processor geometry: 2 x 240
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Mon Dec  4 21:02:20 2017
+
+End at iteration 1999
+Max norm: 9.99936e-01, L2norm: 6.74579e-01
+Running Time: 2.54993 sec. [1.41e+03 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 8000 8000    2 240      Y     2000  2.55 1406    9.99936e-01 6.74579e-01
+  -----

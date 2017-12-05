@@ -4,9 +4,9 @@
 #
 #SBATCH --account=csd562
 #SBATCH --job-name=apf-strong-scale-48
-#SBATCH --output="AVX_test.out"
+#SBATCH --output="Optimal_geometry_96.out"
 #SBATCH --partition="compute"
-#SBATCH --nodes=2
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=24
 #SBATCH --export=ALL
 ####   #SBATCH --mail-type=BEGIN,END,FAIL
@@ -14,11 +14,12 @@
 #SBATCH -t 00:03:00
 # Commands go here
 
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 2 -y 24
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 4 -y 12
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 6 -y 8
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 8 -y 6
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 12 -y 4
-ibrun -np 48 ./apf -n 1800 -i 2000 -x 24 -y 2
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 2 -y 48
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 4 -y 24
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 6 -y 16
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 8 -y 12
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 12 -y 8
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 24 -y 4
+ibrun -np 96 ./apf -n 1800 -i 2000 -x 48 -y 2
 
 

@@ -1,0 +1,131 @@
+
+ *** Current working directory
+/home/mdharmar/pa3-nvorugan-mdharmar
+
+ *** Compiler
+Using built-in specs.
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) 
+
+ *** Environment
+MANPATH=/opt/openmpi/share/man:/usr/share/man:/opt/gridengine/man:/share/apps/opt/gcc-4.8.4/share/man:/opt/openmpi/share/man:/usr/share/man/en:/usr/share/man:/opt/gridengine/man:/usr/local/share/man:/opt/rocks/man:/usr/java/latest/man:/opt/ganglia/man:/opt/sun-ct/man
+PDSHROOT=/opt/pdsh
+HOSTNAME=compute-0-4.local
+SGE_TASK_STEPSIZE=undefined
+SHELL=/bin/bash
+TERM=xterm-256color
+NHOSTS=1
+HISTSIZE=1000
+ECLIPSE_HOME=/opt/eclipse
+SGE_O_WORKDIR=/home/mdharmar/pa3-nvorugan-mdharmar
+TMPDIR=/tmp/36800.1.debug.q
+SSH_CLIENT=137.110.83.183 51121 22
+SGE_O_HOME=/home/mdharmar
+SGE_ARCH=linux-x64
+SGE_CELL=default
+MPICH_PROCESS_GROUP=no
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+RESTARTED=0
+SSH_TTY=/dev/pts/6
+ANT_HOME=/opt/rocks
+ARC=linux-x64
+USER=mdharmar
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lz=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.bz=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.rar=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+LD_LIBRARY_PATH=/opt/gridengine/lib/linux-x64:/share/apps/opt/gcc-4.8.4/lib:/share/apps/opt/gcc-4.8.4/lib64:/opt/gridengine/lib/linux-x64:/opt/openmpi/lib:/opt/python/lib
+SGE_TASK_LAST=undefined
+QUEUE=debug.q
+ROCKS_ROOT=/opt/rocks
+SGE_TASK_ID=undefined
+SGE_BINARY_PATH=/opt/gridengine/bin/linux-x64
+MAIL=/var/spool/mail/mdharmar
+PATH=/usr/bin/:/tmp/36800.1.debug.q:/share/apps/opt/gcc-4.8.4/bin:/usr/bin/:/opt/openmpi/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/eclipse:/opt/ganglia/bin:/opt/ganglia/sbin:/usr/java/latest/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/gridengine/bin/linux-x64:/share/apps/bin:/share/apps/sbin:/home/mdharmar/bin:/home/mdharmar/bin
+runlevel=5
+RUNLEVEL=5
+SGE_STDERR_PATH=/home/mdharmar/pa3-nvorugan-mdharmar/APF.o36800
+LANGSH_SOURCED=1
+PWD=/home/mdharmar/pa3-nvorugan-mdharmar
+JAVA_HOME=/usr/java/latest
+_LMFILES_=/usr/share/Modules/modulefiles/rocks-openmpi:/usr/share/Modules/modulefiles/rocks-openmpi_openib:/etc/modulefiles/gcc-4.8.4
+SGE_STDOUT_PATH=/home/mdharmar/pa3-nvorugan-mdharmar/APF.o36800
+SGE_ACCOUNT=sge
+SGE_RSH_COMMAND=/usr/bin/ssh
+SGE_EXECD_PORT=537
+LANG=en_US.iso885915
+JOB_SCRIPT=/opt/gridengine/default/spool/compute-0-4/job_scripts/36800
+JOB_NAME=APF
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+SGE_QMASTER_PORT=536
+LOADEDMODULES=rocks-openmpi:rocks-openmpi_openib:gcc-4.8.4
+SGE_ROOT=/opt/gridengine
+previous=N
+PREVLEVEL=N
+REQNAME=APF
+SGE_JOB_SPOOL_DIR=/opt/gridengine/default/spool/compute-0-4/active_jobs/36800.1
+ENVIRONMENT=BATCH
+KRB5CCNAME=FILE:/tmp/krb5cc_3039_hVp9XU
+HISTCONTROL=ignoredups
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+CONSOLETYPE=vt
+PE_HOSTFILE=/opt/gridengine/default/spool/compute-0-4/active_jobs/36800.1/pe_hostfile
+HOME=/home/mdharmar
+SHLVL=2
+SGE_CWD_PATH=/home/mdharmar/pa3-nvorugan-mdharmar
+NQUEUES=1
+SGE_O_LOGNAME=mdharmar
+SGE_O_MAIL=/var/spool/mail/mdharmar
+MPIHOME=/opt/openmpi
+UPSTART_INSTANCE=
+TMP=/tmp/36800.1.debug.q
+JOB_ID=36800
+LOGNAME=mdharmar
+UPSTART_EVENTS=runlevel
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+PE=orte
+SSH_CONNECTION=137.110.83.183 51121 132.239.145.212 22
+SGE_TASK_FIRST=undefined
+MODULESHOME=/usr/share/Modules
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+SGE_O_PATH=/share/apps/opt/gcc-4.8.4/bin:/usr/bin/:/opt/openmpi/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/eclipse:/opt/ganglia/bin:/opt/ganglia/sbin:/usr/java/latest/bin:/opt/pdsh/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/gridengine/bin/linux-x64:/share/apps/bin:/share/apps/sbin:/home/mdharmar/bin
+UPSTART_JOB=rc
+SGE_O_HOST=ccom-bang-login
+SGE_O_SHELL=/bin/bash
+REQUEST=APF
+NSLOTS=1
+PUB=/share/class/public/cse260-fa17
+SGE_STDIN_PATH=/dev/null
+G_BROKEN_FILENAMES=1
+OMPI_MCA_btl=openib,self,sm
+SCRATCH=/scratch/mdharmar
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/usr/bin/printenv
+
+>>> Job Starts
+Fri Nov 24 15:28:09 PST 2017
+My Rank is 0, My local size is 150 and 150
+
+
+
+[Simulation begins] Fri Nov 24 15:28:09 2017
+
+dt= 0.0639292, # iters = 400
+m x n = 150 x 150
+processor geometry: 1 x 1
+
+Compiled with MPI ENABLED
+
+[Simulation completes] Fri Nov 24 15:28:09 2017
+
+End at iteration 399
+Max norm: 9.92837e-01, L2norm: 6.12580e-01
+Running Time: 0.216339 sec. [1.16 GFlop/sec]
+
+   M x N   px x py Comm?   #iter  T_p, Gflops        Linf, L2
+@ 150 150    1 1      Y     400  0.2163 1.165    9.92837e-01 6.12580e-01
+  -----
+Fri Nov 24 15:28:09 PST 2017
+>>> Job Ends
