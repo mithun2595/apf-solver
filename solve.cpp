@@ -191,7 +191,7 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
     // int innerBlockRowStartIndex = 2*((n+2)+1);
     // int innerBlockRowEndIndex = (((m+2)*(n+2) - 1) - (n)) - 2*(n+2) + 1;
     // compute_inner(E, E_prev, R, innerBlockRowStartIndex, innerBlockRowEndIndex, n-1, dt, alpha);
-
+#ifdef SSE_VEC
 #ifdef FUSED
     // Solve for the excitation, a PDE
     for(j = innerBlockRowStartIndex; j <= innerBlockRowEndIndex; j+=(n+2)) {
@@ -273,6 +273,10 @@ void solve(double **_E, double **_E_prev, double *R, double alpha, double dt, Pl
 
         }
     }
+#endif
+
+#else
+
 #endif
      /////////////////////////////////////////////////////////////////////////////////
 
